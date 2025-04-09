@@ -169,15 +169,3 @@ h2 {
     border-radius: 5px;
     transition: background-color 0.3s;
 }
-
-/* Enlace de cancelar */
-a {
-    text-decoration: none;
-    color: #0275d8;
-    font-weight: bold;
-    margin-top: 15px;
-}
-
-a:hover {
-    color: #01447e;
-}
