@@ -1,0 +1,15 @@
+<h1>Lista de Libros</h1>
+<a href="{% url 'agregar_libro' %}">Agregar Libro</a>
+<ul>
+    {% for libro in libros %}
+        <li>
+            <strong>{{ libro.titulo }}</strong> - {{ libro.autor }} ({{ libro.anio }})<br>
+            <em>{{ libro.categoria }}</em> | ISBN: {{ libro.isbn }}<br>
+            <p>{{ libro.descripcion }}</p>
+            <p>⭐ Puntuación: {{ libro.puntuacion }}</p>
+            <a href="{% url 'editar_libro' libro.pk %}">Editar</a> |
+            <a href="{% url 'eliminar_libro' libro.pk %}">Eliminar</a>
+        </li>
+        <hr>
+    {% endfor %}
+</ul>
