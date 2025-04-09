@@ -1,15 +1,30 @@
-<h1>Lista de Libros</h1>
-<a href="{% url 'agregar_libro' %}">Agregar Libro</a>
-<ul>
-    {% for libro in libros %}
-        <li>
-            <strong>{{ libro.titulo }}</strong> - {{ libro.autor }} ({{ libro.anio }})<br>
-            <em>{{ libro.categoria }}</em> | ISBN: {{ libro.isbn }}<br>
-            <p>{{ libro.descripcion }}</p>
-            <p>⭐ Puntuación: {{ libro.puntuacion }}</p>
-            <a href="{% url 'editar_libro' libro.pk %}">Editar</a> |
-            <a href="{% url 'eliminar_libro' libro.pk %}">Eliminar</a>
-        </li>
-        <hr>
-    {% endfor %}
-</ul>
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Libros</title>
+    <!-- Cargar el archivo CSS -->
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+</head>
+<body>
+    <h1>Lista de Libros</h1>
+    <a href="{% url 'agregar_libro' %}">Agregar Libro</a>
+    <ul>
+        {% for libro in libros %}
+            <li>
+                <strong>{{ libro.titulo }}</strong> - {{ libro.autor }} ({{ libro.anio }})<br>
+                <em>{{ libro.categoria }}</em> | ISBN: {{ libro.isbn }}<br>
+                <p>{{ libro.descripcion }}</p>
+                <p>⭐ Puntuación: {{ libro.puntuacion }}</p>
+                <a href="{% url 'editar_libro' libro.pk %}">Editar</a> |
+                <a href="{% url 'eliminar_libro' libro.pk %}">Eliminar</a>
+            </li>
+            <hr>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+

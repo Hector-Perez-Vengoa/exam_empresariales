@@ -1,54 +1,78 @@
-/* Estilo general */
+h1 {
+    font-family: 'Arial', sans-serif; 
+    font-size: 36px;
+    color: #333; 
+    text-align: center;  
+    margin-bottom: 20px; 
+    text-transform: uppercase;  
+    letter-spacing: 2px;  
+    border-bottom: 2px solid #4CAF50; 
+    padding-bottom: 10px; 
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
     margin: 0;
-    padding: 0;
+    padding: 25px;
 }
 
-/* Estilo del formulario */
 form {
-    background-color: #ffffff;
+    background-color: #fff;
     padding: 20px;
     border-radius: 8px;
-    max-width: 600px;
-    margin: 20px auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin: 30px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Etiquetas de los campos */
+.form-group {
+    margin-bottom: 20px;
+}
+
 label {
     font-weight: bold;
     margin-bottom: 8px;
     display: block;
 }
 
-/* Campos del formulario */
 input[type="text"], input[type="number"], textarea {
     width: 100%;
     padding: 10px;
-    margin: 8px 0;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     box-sizing: border-box;
+    font-size: 16px;
 }
 
-/* Botón de envío */
-button[type="submit"] {
+.submit-btn {
     background-color: #4CAF50;
     color: white;
-    padding: 10px 20px;
+    padding: 12px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+    margin-top: 20px;
 }
 
-button[type="submit"]:hover {
+.submit-btn:hover {
     background-color: #45a049;
 }
 
-/* Errores */
+.volver-btn {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.volver-btn:hover {
+    text-decoration: underline;
+}
+
 .errors {
     color: red;
     font-size: 12px;
@@ -56,5 +80,54 @@ button[type="submit"]:hover {
 
 .errors li {
     list-style-type: none;
-    margin: 4px 0;
+    margin-top: 5px;
+}
+
+input:focus, textarea:focus {
+    outline: 2px solid #4CAF50;
+    border-color: #4CAF50;
+}
+
+a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 10px 0;
+}
+
+p {
+    font-size: 14px;
+    color: #555;
+}
+
+em {
+    font-style: italic;
+}
+
+.errors {
+    color: red;
+    font-size: 12px;
 }

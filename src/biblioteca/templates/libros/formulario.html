@@ -1,93 +1,109 @@
-<h1>Formulario de Libro</h1>
+{% load static %}
 
-<form method="post">
-    {% csrf_token %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Libro</title>
+    <!-- Cargar el archivo CSS -->
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+</head>
+<body>
 
-    <div>
-        <label for="id_titulo" class="from">Título:</label>
-        {{ form.titulo }}
-        {% if form.titulo.errors %}
-            <ul class="errors">
-                {% for error in form.titulo.errors %}
-                    <li>{{ error }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-    </div>
+    <h1>Formulario de Libro</h1>
 
-    <div>
-        <label for="id_autor">Autor:</label>
-        {{ form.autor }}
-        {% if form.autor.errors %}
-            <ul class="errors">
-                {% for error in form.autor.errors %}
-                    <li>{{ error }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-    </div>
+    <form method="post">
+        {% csrf_token %}
 
-    <div>
-        <label for="id_anio">Año:</label>
-        {{ form.anio }}
-        {% if form.anio.errors %}
-            <ul class="errors">
-                {% for error in form.anio.errors %}
-                    <li>{{ error }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-    </div>
+        <div class="form-group">
+            <label for="id_titulo">Título:</label>
+            {{ form.titulo }}
+            {% if form.titulo.errors %}
+                <ul class="errors">
+                    {% for error in form.titulo.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
 
-    <div>
-        <label for="id_categoria">Categoría:</label>
-        {{ form.categoria }}
-        {% if form.categoria.errors %}
-            <ul class="errors">
-                {% for error in form.categoria.errors %}
-                    <li>{{ error }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-    </div>
+        <div class="form-group">
+            <label for="id_autor">Autor:</label>
+            {{ form.autor }}
+            {% if form.autor.errors %}
+                <ul class="errors">
+                    {% for error in form.autor.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
 
-    <div>
-        <label for="id_isbn">ISBN:</label>
-        {{ form.isbn }}
-        {% if form.isbn.errors %}
-            <ul class="errors">
-                {% for error in form.isbn.errors %}
-                    <li>{{ error }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-    </div>
+        <div class="form-group">
+            <label for="id_anio">Año:</label>
+            {{ form.anio }}
+            {% if form.anio.errors %}
+                <ul class="errors">
+                    {% for error in form.anio.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
 
-    <div>
-        <label for="id_descripcion">Descripción:</label>
-        {{ form.descripcion }}
-        {% if form.descripcion.errors %}
-            <ul class="errors">
-                {% for error in form.descripcion.errors %}
-                    <li>{{ error }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-    </div>
+        <div class="form-group">
+            <label for="id_categoria">Categoría:</label>
+            {{ form.categoria }}
+            {% if form.categoria.errors %}
+                <ul class="errors">
+                    {% for error in form.categoria.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
 
-    <div>
-        <label for="id_puntuacion">Puntuación:</label>
-        {{ form.puntuacion }}
-        {% if form.puntuacion.errors %}
-            <ul class="errors">
-                {% for error in form.puntuacion.errors %}
-                    <li>{{ error }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-    </div>
+        <div class="form-group">
+            <label for="id_isbn">ISBN:</label>
+            {{ form.isbn }}
+            {% if form.isbn.errors %}
+                <ul class="errors">
+                    {% for error in form.isbn.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
 
-    <button type="submit">Guardar</button>
-</form>
+        <div class="form-group">
+            <label for="id_descripcion">Descripción:</label>
+            {{ form.descripcion }}
+            {% if form.descripcion.errors %}
+                <ul class="errors">
+                    {% for error in form.descripcion.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
 
-<a href="{% url 'lista_libros' %}">Volver</a>
+        <div class="form-group">
+            <label for="id_puntuacion">Puntuación:</label>
+            {{ form.puntuacion }}
+            {% if form.puntuacion.errors %}
+                <ul class="errors">
+                    {% for error in form.puntuacion.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+
+        <button type="submit" class="submit-btn">Guardar</button>
+    </form>
+
+    <a href="{% url 'lista_libros' %}" class="volver-btn">Volver</a>
+
+</body>
+</html>
