@@ -1,6 +1,22 @@
-<h2>¿Estás seguro que deseas eliminar "{{ libro }}"?</h2>
-<form method="post">
-    {% csrf_token %}
-    <button type="submit">Sí, eliminar</button>
-</form>
-<a href="{% url 'lista_libros' %}">Cancelar</a>
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmar Eliminación</title>
+    <!-- Cargar el archivo CSS -->
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+</head>
+<body>
+    <div class="confirmation-container">
+        <h2>¿Estás seguro que deseas eliminar "{{ libro }}"?</h2>
+        <form method="post" class="delete-from">
+            {% csrf_token %}
+            <button type="submit" class="delete-button">Sí, eliminar</button>
+        </form>
+        <a href="{% url 'lista_libros' %}">Cancelar</a>
+    </div>
+</body>
+</html>
