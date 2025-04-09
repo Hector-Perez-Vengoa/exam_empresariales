@@ -149,7 +149,6 @@ h2 {
     text-transform: uppercase;
 }
 
-/* Estilo para el formulario y botones */
 .delete-form {
     display: flex;
     justify-content: center;
@@ -158,7 +157,6 @@ h2 {
     margin-top: 20px;
 }
 
-/* Botón de eliminar */
 .delete-button {
     background-color: #d9534f;
     color: white;
