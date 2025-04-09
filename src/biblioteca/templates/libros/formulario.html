@@ -4,7 +4,7 @@
     {% csrf_token %}
 
     <div>
-        <label for="id_titulo">Título:</label>
+        <label for="id_titulo" class="from">Título:</label>
         {{ form.titulo }}
         {% if form.titulo.errors %}
             <ul class="errors">
